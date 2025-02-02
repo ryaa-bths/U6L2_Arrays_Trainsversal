@@ -1,6 +1,7 @@
 /// Questiion#9 (Array Method Madness)
 
 public class ArrayAlgorithms {
+    static int i;
    /** Prints each String in wordList, on its own line, followed by “!”.
     *  Does NOT mutate (modify) wordList.
     *  PRECONDITION: wordList.length > 0
@@ -8,9 +9,18 @@ public class ArrayAlgorithms {
     *  @param wordList  original array of Strings; does not get modified
     */
    public static void printExclamation(String[] wordList)
-   { /* implement this method! */
+   { /*
        for (String word : wordList){
            System.out.println(word + "!");
+       }
+       for (int i = 0; i < wordList.length(); i++){
+            System.out.println(wordList[i] + "!");
+       }
+       */
+       i = 0;
+       while (i < wordList.length){   //is more generalized than for loops since it can add more conditionals
+           System.out.println(wordList[i] + "!");
+           i++;
        }
    }
 
@@ -22,7 +32,7 @@ public class ArrayAlgorithms {
      */
     public static void addExclamation(String[] wordList)
     {
-        int i = wordList.length - 1;
+        i = wordList.length - 1;   //a for loop doesn't keep the created i variable. In while lloops, will keep created variable in storage, unless I make it STATIC AND REUSABLE!!! figured out how to turn storage problem into reassignment thingy!
         while (i > 0){
             wordList[i] += "!";
             i--;
@@ -39,10 +49,20 @@ public class ArrayAlgorithms {
     public static int sum(int[] numList)
     {
         int sum = 0;
-        for (int num : numList){
+        /*for (int num : numList){
             sum += num;
         }
+        i = 0;  //i = numList.length - 1;
+        while (i < numList.length){ //(i>=0)
+            sum += numList[i];
+            i++;   //i--;
+        }
+        */
+        for (int i = 0; i < numList.length; i++){
+            sum += numList[i];
+        }
         return sum;
+
     }
 
     /** Returns the average of all values in numList, as a double.
@@ -69,10 +89,19 @@ public class ArrayAlgorithms {
     public static int minimum(int[] numList)
     {
         int min = numList[0];
+        /*
         for (int num : numList){
             if (num < min){
                 min = num;
             }
+        }
+        */
+        i = numList.length - 1;
+        while (i != 0){           //could do this instead of >= in for.. or actually, how can I let it break if it reaches min early? I don't think it is possible, since it would still need to check everything
+            if (min > numList[i]){
+                min = numList[i];
+            }
+            i--;//I think for a while loop, there's the possibility of using it to break conditionals early
         }
         return min;
     }
@@ -87,9 +116,15 @@ public class ArrayAlgorithms {
     public static int maximum(int[] numList)
     {
         int max = numList[0];
+        /*
         for (int num : numList){
             if (num > max){
                 max = num;
+            }
+        }*/
+        for (int i = 0; i != numList.length - 1; i++){   //hold up, for loop still works with != ?!
+            if (max > numList[i]){
+                max = numList[i];       //for loop is concise. It doesn't keep the created i variable
             }
         }
         return max; }
@@ -150,9 +185,8 @@ public class ArrayAlgorithms {
         syntaxes. -2/1/2025 15:45
         * */
         int[] squares = new int[numList.length];
-
         for (int i = 0; i < numList.length;i++){
-            ///experiment to use math operator without math class.
+            //experiment to use math operator without math class.
             squares[i] = numList[i] * numList[i]; //(int)Math.pow(numList[i], 2);
             //System.out.print("_" + squares[i]);
         }

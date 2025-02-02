@@ -4,8 +4,8 @@ public class ArrayAlgorithmTester {
 
     public static void main(String[] args)
     {
-    /*
-    System.out.println("___.-.___\t\tprintExclamation")                               //printExclamation
+
+    System.out.println("___.-.___\t\tprintExclamation");                              //printExclamation
     String[] words = {"hello", "hola", "hi", "what's up?"};
     ArrayAlgorithms.printExclamation(words);
 
@@ -57,7 +57,7 @@ public class ArrayAlgorithmTester {
     // original numbers lists NOT modified
     System.out.println(Arrays.toString(bums));
     System.out.println(Arrays.toString(bums2));
-
+/*
     System.out.println("\n___.-.___\t\tmaximum");              ///  (///////)   //maximum
     int[] nums = {6, 4, 3, 9, 2, 5};
     int max = ArrayAlgorithms.maximum(nums);
@@ -88,7 +88,7 @@ int[] nums = {5, -10, 8, 12, 2, -6, 0};
     System.out.println("----");
     // original numbers list NOT modified
     System.out.println(Arrays.toString(nums));
-     */
+
 
         System.out.println("\n___.-.___\t\tflipBool");              ///  (///////)   //flipBool
         boolean[] bools = {false, true, true, false, true};
@@ -110,5 +110,6 @@ int[] nums = {5, -10, 8, 12, 2, -6, 0};
         System.out.println(Arrays.toString(nums));
         System.out.println(Arrays.toString(nums2));
 
+ */
     }
 }
